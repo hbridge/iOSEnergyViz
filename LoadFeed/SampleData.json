@@ -1,0 +1,47 @@
+[
+    {
+        "reporting_period": "2022-11-30T00:00:00.000",
+        "project_number": "0000444536",
+        "city": "Brooklyn",
+        "county": "Kings",
+        "state": "NY",
+        "zip_code": "11229",
+        "incorporated_municipality": "New York",
+        "municipality_type": "City",
+        "census_tract": "36047054800",
+        "sector": "Residential",
+        "program_type": "Residential/Small Commercial",
+        "solicitation": "PON 2112",
+        "electric_utility": "Consolidated Edison",
+        "purchase_type": "Purchase",
+        "date_application_received": "2022-03-10T00:00:00.000",
+        "project_status": "Pipeline",
+        "minority_or_women_owned_business_enterprise_mwbe": "No",
+        "inverter_manufacturer": "SunPower",
+        "primary_inverter_model_number": "SPR-X22-360-E-AC [240V]",
+        "inverter_quantity": "8.00",
+        "pv_module_manufacturer": "SunPower",
+        "pv_module_model_number": "SPR-X22-360-E-AC",
+        "pv_module_quantity": "8.00",
+        "project_cost": "20639.41",
+        "incentive": "576.00",
+        "totalnameplatekwdc": "2.88",
+        "expected_kwh_annual_production": "3228",
+        "affordable_solar": "No",
+        "community_distributed_generation": "No",
+        "green_jobs_green_new_york_participant": "No",
+        "latitude": "40.6092526",
+        "longitude": "-73.9483771",
+        "georeference": {
+            "type": "Point",
+            "coordinates": [
+                -73.9483771,
+                40.6092526
+            ]
+        },
+        ":@computed_region_yamh_8v7k": "894",
+        ":@computed_region_wbg7_3whc": "812",
+        ":@computed_region_kjdx_g34t": "2090",
+        ":@computed_region_n8jy_tbqr": "41"
+    }
+]
