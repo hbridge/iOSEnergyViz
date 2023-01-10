@@ -9,6 +9,7 @@ import MapKit
 import SwiftUI
 
 struct MapView: View {
+    let projects: [SolarProject]
     @State private var region: MKCoordinateRegion = MKCoordinateRegion(
         center: CLLocationCoordinate2D(latitude: MapDefaults.latitude, longitude: MapDefaults.longitude),
         span: MKCoordinateSpan(latitudeDelta: MapDefaults.zoom, longitudeDelta: MapDefaults.zoom))
@@ -20,13 +21,27 @@ struct MapView: View {
     }
 
     var body: some View {
-        VStack {
-            Text("lat: \(region.center.latitude), long: \(region.center.longitude). Zoom: \(region.span.latitudeDelta)")
-            .font(.caption)
-            .padding()
-            Map(coordinateRegion: $region,
-                interactionModes: .all,
-                showsUserLocation: true)
+        NavigationStack {
+            VStack {
+                Text("lat: \(region.center.latitude), long: \(region.center.longitude). Zoom: \(region.span.latitudeDelta)")
+                    .font(.caption)
+                    .padding()
+                Map(coordinateRegion: $region,
+                    interactionModes: .all,
+                    showsUserLocation: true,
+                    annotationItems: projects
+                ) { item in
+                    MapAnnotation(coordinate: item.coordinate) {
+                        NavigationLink(value: item) {
+                            Image(systemName: "sun.max.circle.fill")
+                                .foregroundColor(.green)
+                        }
+                    }
+                }
+                .navigationDestination(for: SolarProject.self) { item in
+                    SolarDetail(project: item)
+                }
+            }
         }
     }
 }

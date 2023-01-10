@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreLocation
 
 struct SolarProject: Codable, Identifiable, Hashable {
     var project_number: String
@@ -30,6 +31,13 @@ struct SolarProject: Codable, Identifiable, Hashable {
         get {
             return project_number
         }
+    }
+    
+    var coordinate: CLLocationCoordinate2D {
+        return CLLocationCoordinate2D(
+            latitude: CLLocationDegrees(self.latitude)!,
+            longitude: CLLocationDegrees(self.longitude)!
+        )
     }
     
 #if DEBUG
