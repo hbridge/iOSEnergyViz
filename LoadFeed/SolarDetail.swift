@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SolarDetail: View {
     let project: SolarProject
+    @State private var showJSON = false
     var body: some View {
         Form {
             Section("Location & Type") {
@@ -47,7 +48,7 @@ struct SolarDetail: View {
                 HStack {
                     Text("System KW Max").bold()
                     Spacer()
-                    Text("\(project.totalnameplatekwdc ?? "Unknown") \(project.primary_inverter_model_number ?? "")")
+                    Text("\(project.totalnameplatekwdc ?? "Unknown")")
                 }
                 HStack {
                     Text("Expected Annual KWh").bold()
@@ -55,7 +56,21 @@ struct SolarDetail: View {
                     Text("\(project.expected_kwh_annual_production ?? "Unknown")")
                 }
             }
+            Section("Data") {
+                HStack {
+                    Text("Source").bold()
+                    Spacer()
+                    Text("NYSERDA")
+                }
+                VStack { Toggle("Show Raw", isOn: $showJSON)
+                    if showJSON {
+                        var raw = String(reflecting: project).split(separator:", ").joined(separator: ",\n ")
+                        Text(raw).font(.caption).monospaced()
+                    }
+                }
+            }
         }
+        
         .navigationTitle(project.street_address ?? project.project_number)
         .navigationBarTitleDisplayMode(.inline)
     }
