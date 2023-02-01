@@ -64,7 +64,7 @@ struct SolarDetail: View {
                 }
                 VStack { Toggle("Show Raw", isOn: $showJSON)
                     if showJSON {
-                        var raw = String(reflecting: project).split(separator:", ").joined(separator: ",\n ")
+                        let raw = String(reflecting: project).split(separator:", ").joined(separator: ",\n ")
                         Text(raw).font(.caption).monospaced()
                     }
                 }
