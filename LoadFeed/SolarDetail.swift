@@ -62,23 +62,21 @@ struct SolarDetail: View {
                     Spacer()
                     Text("NYSERDA")
                 }
-                VStack { Toggle("Show Raw", isOn: $showJSON)
-                    if showJSON {
-                        let raw = String(reflecting: project).split(separator:", ").joined(separator: ",\n ")
-                        Text(raw).font(.caption).monospaced()
-                    }
-                }
+//                VStack { Toggle("Show Raw", isOn: $showJSON)
+//                    if showJSON {
+//                        let raw = String(reflecting: project).split(separator:", ").joined(separator: ",\n ")
+//                        Text(raw).font(.caption).monospaced()
+//                    }
+//                }
             }
         }
         
-        .navigationTitle(project.street_address ?? project.project_number)
+        .navigationTitle(project.name)
         .navigationBarTitleDisplayMode(.inline)
     }
-        
-    
 }
 
-struct DetailView_Previews: PreviewProvider {
+struct SolarDetailView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
             SolarDetail(project: SolarProject.example)

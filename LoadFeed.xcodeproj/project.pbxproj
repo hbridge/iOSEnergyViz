@@ -21,7 +21,9 @@
 		5AB6976F294D16F3002AF115 /* LoadFeedUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB6976E294D16F3002AF115 /* LoadFeedUITestsLaunchTests.swift */; };
 		5AB6977C294D17F3002AF115 /* SolarProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB6977B294D17F3002AF115 /* SolarProject.swift */; };
 		5AB6977E294D1898002AF115 /* SampleData.json in Resources */ = {isa = PBXBuildFile; fileRef = 5AB6977D294D1898002AF115 /* SampleData.json */; };
+		5ABEB51D298D7CE0007C32DA /* PlantDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABEB51C298D7CE0007C32DA /* PlantDetail.swift */; };
 		5AC1887C298AF28600210DFC /* EGridPlant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC1887B298AF28600210DFC /* EGridPlant.swift */; };
+		5AC1887E298C345600210DFC /* EnergySource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC1887D298C345600210DFC /* EnergySource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,7 +62,9 @@
 		5AB6976E294D16F3002AF115 /* LoadFeedUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadFeedUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		5AB6977B294D17F3002AF115 /* SolarProject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolarProject.swift; sourceTree = "<group>"; };
 		5AB6977D294D1898002AF115 /* SampleData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SampleData.json; sourceTree = "<group>"; };
+		5ABEB51C298D7CE0007C32DA /* PlantDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlantDetail.swift; sourceTree = "<group>"; };
 		5AC1887B298AF28600210DFC /* EGridPlant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EGridPlant.swift; sourceTree = "<group>"; };
+		5AC1887D298C345600210DFC /* EnergySource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnergySource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,11 +120,13 @@
 				5AB69751294D16F1002AF115 /* LoadFeedApp.swift */,
 				5A622421296DCA86004F805C /* LocationHelper.swift */,
 				5AB6977B294D17F3002AF115 /* SolarProject.swift */,
+				5AC1887D298C345600210DFC /* EnergySource.swift */,
 				5AC1887B298AF28600210DFC /* EGridPlant.swift */,
 				5AB69753294D16F1002AF115 /* ContentView.swift */,
 				5A62241D2968D048004F805C /* MainView.swift */,
 				5A62241F2968D066004F805C /* MapView.swift */,
 				5A62241B2968BED2004F805C /* SolarDetail.swift */,
+				5ABEB51C298D7CE0007C32DA /* PlantDetail.swift */,
 				5AB6977D294D1898002AF115 /* SampleData.json */,
 				5AB69755294D16F3002AF115 /* Assets.xcassets */,
 				5AB69757294D16F3002AF115 /* Preview Content */,
@@ -288,10 +294,12 @@
 				5AB69754294D16F1002AF115 /* ContentView.swift in Sources */,
 				5AC1887C298AF28600210DFC /* EGridPlant.swift in Sources */,
 				5A62241E2968D048004F805C /* MainView.swift in Sources */,
+				5AC1887E298C345600210DFC /* EnergySource.swift in Sources */,
 				5AB6977C294D17F3002AF115 /* SolarProject.swift in Sources */,
 				5AB69752294D16F1002AF115 /* LoadFeedApp.swift in Sources */,
 				5A622422296DCA86004F805C /* LocationHelper.swift in Sources */,
 				5A62241C2968BED2004F805C /* SolarDetail.swift in Sources */,
+				5ABEB51D298D7CE0007C32DA /* PlantDetail.swift in Sources */,
 				5A62241A296777C6004F805C /* Helper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

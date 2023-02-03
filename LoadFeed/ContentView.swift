@@ -28,6 +28,9 @@ struct ContentView: View {
             .navigationDestination(for: SolarProject.self) { item in
                 SolarDetail(project: item)
             }
+            .navigationDestination(for: EGridPlant.self) { item in
+                PlantDetail(plant: item)
+            }
             .navigationTitle("Energy Near You")
             .listStyle(GroupedListStyle())
         }
@@ -39,7 +42,7 @@ struct EGridPlantNavLink: View {
     var body: some View {
         NavigationLink(value: plant) {
             VStack(alignment: .leading) {
-                Text(plant.pname ?? "Unknown")
+                Text(plant.name)
                 Text("Fuel: \(plant.plprmfl ?? "Unknown")")
             }
         }
@@ -51,7 +54,7 @@ struct SolarProjectNavLink: View {
     var body: some View {
         NavigationLink(value: project) {
             VStack(alignment: .leading) {
-                Text(project.street_address ?? project.project_number)
+                Text(project.name)
                 Text(project.latitude + ", " + project.longitude)
             }
         }

@@ -9,7 +9,9 @@ import MapKit
 import SwiftUI
 
 struct MapView: View {
-    let projects: [SolarProject]
+    let energySources: [EnergySource]
+    let location: CLLocationCoordinate2D
+    
     @State private var region: MKCoordinateRegion = MKCoordinateRegion(
         center: CLLocationCoordinate2D(latitude: MapDefaults.latitude, longitude: MapDefaults.longitude),
         span: MKCoordinateSpan(latitudeDelta: MapDefaults.zoom, longitudeDelta: MapDefaults.zoom))
@@ -29,19 +31,31 @@ struct MapView: View {
                 Map(coordinateRegion: $region,
                     interactionModes: .all,
                     showsUserLocation: true,
-                    annotationItems: projects
+                    annotationItems: energySources
                 ) { item in
-                    MapAnnotation(coordinate: item.coordinate) {
+                    MapAnnotation(coordinate: item.coordinate()) {
                         NavigationLink(value: item) {
-                            Image(systemName: "sun.max.circle.fill")
-                                .foregroundColor(.green)
+                            Image(systemName: item.iconStyle()["icon"]!)
+                                .foregroundColor(Color(item.iconStyle()["colorString"]!))
                         }
                     }
                 }
-                .navigationDestination(for: SolarProject.self) { item in
-                    SolarDetail(project: item)
+                .navigationDestination(for: EnergySource.self) { item in
+                    if let project = item as? SolarProject {
+                        SolarDetail(project: project)
+                    }
+                    if let plant = item as? EGridPlant {
+                        PlantDetail(plant: plant)
+                    }
+                    
                 }
             }
+        }.task {
+            region = MKCoordinateRegion(
+                center: location,
+                span: MKCoordinateSpan(latitudeDelta: MapDefaults.zoom, longitudeDelta: MapDefaults.zoom)
+            )
         }
     }
 }
+

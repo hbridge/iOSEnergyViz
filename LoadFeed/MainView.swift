@@ -50,7 +50,7 @@ struct MainView: View {
                 .tabItem{
                     Label("List", systemImage: "list.dash")
                 }
-            MapView(projects: projects, plants: plants, location: location)
+            MapView(energySources: plants + projects, location: location)
                 .tabItem {
                     Label("Map", systemImage: "map")
                 }
