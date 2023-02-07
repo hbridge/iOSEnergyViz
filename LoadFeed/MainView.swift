@@ -28,7 +28,7 @@ struct MainView: View {
     }
     
     func loadPowerPlants() async {
-        guard let url = URL(string:"https://egrid-server.fly.dev/api/plants/?lat=\(location.latitude)&lng=\(location.longitude)&rad=10")
+        guard let url = URL(string:"https://egrid-server.fly.dev/api/plants/?lat=\(location.latitude)&lng=\(location.longitude)&rad=20&page_size=50")
         else {
             print("Invalid Power Plant Fetch URL")
             return
@@ -59,8 +59,6 @@ struct MainView: View {
             await loadSolarProjects()
             await loadPowerPlants()
         }
-        
-        
     }
 }
 
