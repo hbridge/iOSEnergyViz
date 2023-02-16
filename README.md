@@ -3,7 +3,9 @@ iOS SwiftUI App to Visualize Nearby Energy Infrastructure using MapView. The app
 
 ## Screenshots
 
-![Plants list](Screenshots/PowerPlantsList.png?raw=true "Power Plants")
+<img src="Screenshots/PowerPlantsList.png" width="192"> <img src="Screenshots/Map.png" width="192">
+<img src="Screenshots/PlantDetails.png" width="192">  <img src="Screenshots/SolarDetails.png" width="192">
+
 
 
 # Build and Run
