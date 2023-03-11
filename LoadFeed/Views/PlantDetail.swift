@@ -31,14 +31,14 @@ struct PlantDetail: View {
             }
             Section("Plant Type & Capacity") {
                 HStack {
-                    Text("Category").bold()
+                    Text("Fuel Category").bold()
                     Spacer()
-                    Text(plant.plfuelct ?? "")
+                    Text(plant.plfuelct?.capitalized ?? "")
                 }
                 HStack {
-                    Text("Fuel Type").bold()
+                    Text("Primary Fuel").bold()
                     Spacer()
-                    Text(plant.plprmfl ?? "")
+                    Text(plant.fuelTypeDisplay())
                 }
                 HStack {
                     Text("Nameplate (Theoretical) Capacity").bold()

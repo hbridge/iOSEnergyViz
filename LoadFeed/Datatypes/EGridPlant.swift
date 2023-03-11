@@ -52,8 +52,8 @@ class EGridPlant: EnergySource {
         utlsrvnm = try? values.decode(String.self, forKey: .utlsrvnm)
         numunt = try? values.decode(Int16.self, forKey: .numunt)
         numgen = try? values.decode(Int16.self, forKey: .numgen)
-        plprmfl = try? values.decode(String.self, forKey: .plprmfl)
-        plfuelct = try? values.decode(String.self, forKey: .plfuelct)
+        plprmfl = try? valueOrUnknown(values.decode(String.self, forKey: .plprmfl))
+        plfuelct = try? valueOrUnknown(values.decode(String.self, forKey: .plfuelct))
         coalflag = try? values.decode(Bool.self, forKey: .coalflag)
         capfac = try? values.decode(String.self, forKey: .capfac)
         namepcap = try? values.decode(Float.self, forKey: .namepcap)
@@ -110,8 +110,8 @@ class EGridPlant: EnergySource {
         self.utlsrvnm = utlsrvnm
         self.numunt = numunt
         self.numgen = numgen
-        self.plprmfl = plprmfl
-        self.plfuelct = plfuelct
+        self.plprmfl = valueOrUnknown(plprmfl)
+        self.plfuelct = valueOrUnknown(plfuelct)
         self.coalflag = coalflag
         self.capfac = capfac
         self.namepcap = namepcap
@@ -138,7 +138,30 @@ class EGridPlant: EnergySource {
     }
     
     override func fuelType() -> String {
-        self.plfuelct ?? "Unknown"
+        self.plprmfl ?? ""
+    }
+    
+    override func fuelCategory() -> String {
+        self.plfuelct ?? ""
+    }
+    
+    override func fuelTypeDisplay() -> String {
+        switch self.fuelType() {
+        case "DFO":
+            return "Diesel"
+        case "HYDRO":
+            return "Hydroelectric"
+        case "KER":
+            return "Kerosene"
+        case "NG":
+            return "Natural Gas"
+        case "OFSL":
+            return "Other Fossil Fuel"
+        case "OTHF":
+            return "Waste heat"
+        default:
+            return self.fuelType().capitalized
+        }
     }
     
 #if DEBUG

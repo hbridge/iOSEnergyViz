@@ -21,6 +21,7 @@
 		5AB6977C294D17F3002AF115 /* SolarProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB6977B294D17F3002AF115 /* SolarProject.swift */; };
 		5AB6977E294D1898002AF115 /* SampleData.json in Resources */ = {isa = PBXBuildFile; fileRef = 5AB6977D294D1898002AF115 /* SampleData.json */; };
 		5ABEB51D298D7CE0007C32DA /* PlantDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABEB51C298D7CE0007C32DA /* PlantDetail.swift */; };
+		5AC167D829BCDA6900ECCC15 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC167D729BCDA6900ECCC15 /* Helpers.swift */; };
 		5AC1887C298AF28600210DFC /* EGridPlant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC1887B298AF28600210DFC /* EGridPlant.swift */; };
 		5AC1887E298C345600210DFC /* EnergySource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC1887D298C345600210DFC /* EnergySource.swift */; };
 /* End PBXBuildFile section */
@@ -61,6 +62,7 @@
 		5AB6977B294D17F3002AF115 /* SolarProject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolarProject.swift; sourceTree = "<group>"; };
 		5AB6977D294D1898002AF115 /* SampleData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SampleData.json; sourceTree = "<group>"; };
 		5ABEB51C298D7CE0007C32DA /* PlantDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlantDetail.swift; sourceTree = "<group>"; };
+		5AC167D729BCDA6900ECCC15 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Helpers.swift; path = LoadFeed/Helpers.swift; sourceTree = "<group>"; };
 		5AC1887B298AF28600210DFC /* EGridPlant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EGridPlant.swift; sourceTree = "<group>"; };
 		5AC1887D298C345600210DFC /* EnergySource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnergySource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -93,6 +95,7 @@
 		5AB69745294D16F1002AF115 = {
 			isa = PBXGroup;
 			children = (
+				5AC167D729BCDA6900ECCC15 /* Helpers.swift */,
 				5AB69750294D16F1002AF115 /* LoadFeed */,
 				5AB69761294D16F3002AF115 /* LoadFeedTests */,
 				5AB6976B294D16F3002AF115 /* LoadFeedUITests */,
@@ -116,15 +119,8 @@
 				5A622423296DCDD0004F805C /* Info.plist */,
 				5AB69751294D16F1002AF115 /* LoadFeedApp.swift */,
 				5A622421296DCA86004F805C /* LocationHelper.swift */,
-				5AB6977B294D17F3002AF115 /* SolarProject.swift */,
-				5AC1887D298C345600210DFC /* EnergySource.swift */,
-				5AC1887B298AF28600210DFC /* EGridPlant.swift */,
-				5AB69753294D16F1002AF115 /* ContentView.swift */,
-				5A62241D2968D048004F805C /* MainView.swift */,
-				5A62241F2968D066004F805C /* MapView.swift */,
-				5A62241B2968BED2004F805C /* SolarDetail.swift */,
-				5ABEB51C298D7CE0007C32DA /* PlantDetail.swift */,
-				5AB6977D294D1898002AF115 /* SampleData.json */,
+				5AC167D529BCCEA900ECCC15 /* Datatypes */,
+				5AC167D629BCCED300ECCC15 /* Views */,
 				5AB69755294D16F3002AF115 /* Assets.xcassets */,
 				5AB69757294D16F3002AF115 /* Preview Content */,
 			);
@@ -154,6 +150,29 @@
 				5AB6976E294D16F3002AF115 /* LoadFeedUITestsLaunchTests.swift */,
 			);
 			path = LoadFeedUITests;
+			sourceTree = "<group>";
+		};
+		5AC167D529BCCEA900ECCC15 /* Datatypes */ = {
+			isa = PBXGroup;
+			children = (
+				5AC1887D298C345600210DFC /* EnergySource.swift */,
+				5AC1887B298AF28600210DFC /* EGridPlant.swift */,
+				5AB6977B294D17F3002AF115 /* SolarProject.swift */,
+				5AB6977D294D1898002AF115 /* SampleData.json */,
+			);
+			path = Datatypes;
+			sourceTree = "<group>";
+		};
+		5AC167D629BCCED300ECCC15 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5A62241D2968D048004F805C /* MainView.swift */,
+				5AB69753294D16F1002AF115 /* ContentView.swift */,
+				5A62241F2968D066004F805C /* MapView.swift */,
+				5A62241B2968BED2004F805C /* SolarDetail.swift */,
+				5ABEB51C298D7CE0007C32DA /* PlantDetail.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -291,6 +310,7 @@
 				5AB69754294D16F1002AF115 /* ContentView.swift in Sources */,
 				5AC1887C298AF28600210DFC /* EGridPlant.swift in Sources */,
 				5A62241E2968D048004F805C /* MainView.swift in Sources */,
+				5AC167D829BCDA6900ECCC15 /* Helpers.swift in Sources */,
 				5AC1887E298C345600210DFC /* EnergySource.swift in Sources */,
 				5AB6977C294D17F3002AF115 /* SolarProject.swift in Sources */,
 				5AB69752294D16F1002AF115 /* LoadFeedApp.swift in Sources */,

@@ -97,6 +97,7 @@ class SolarProject: EnergySource {
     }
     
     override func fuelType() -> String {"SOLAR"}
+    override func fuelCategory() -> String {"SOLAR"}
     
 #if DEBUG
     static let example = SolarProject(

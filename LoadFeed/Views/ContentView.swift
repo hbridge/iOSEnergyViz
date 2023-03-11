@@ -42,8 +42,12 @@ struct EGridPlantNavLink: View {
     var body: some View {
         NavigationLink(value: plant) {
             VStack(alignment: .leading) {
-                Text(plant.name)
-                Text("Fuel: \(plant.plprmfl ?? "Unknown")")
+                Text(plant.name).bold()
+                HStack(alignment: .center, spacing: 4.0) {
+                    Image(systemName: plant.iconStyle()["icon"]!)
+                        .foregroundColor(Color(plant.iconStyle()["colorString"]!))
+                    Text("\(plant.fuelTypeDisplay()) Plant")
+                }
             }
         }
     }

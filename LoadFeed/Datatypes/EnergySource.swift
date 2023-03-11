@@ -44,9 +44,13 @@ class EnergySource: Decodable, Identifiable, Hashable {
         )
     }
     
-    func fuelType() -> String { "Unknown" }
+    // fuelType and category should be is overridden by subclasses
+    func fuelType() -> String { fatalError("Must Override") }
+    func fuelTypeDisplay() -> String {return fuelType().capitalized}
+    func fuelCategory() -> String { fatalError("Must Override")}
+    
     func iconStyle() -> Dictionary<String, String> {
-        switch self.fuelType() {
+        switch self.fuelCategory() {
         case "BIOMASS":
             return [
                 "icon": "b.circle.fill",
@@ -84,12 +88,12 @@ class EnergySource: Decodable, Identifiable, Hashable {
             ]
         case "OIL":
             return [
-                "icon": "cylinder.split.1x2.fill",
+                "icon": "o.circle.fill",
                 "colorString": "Oil"
             ]
         case "SOLAR":
             return [
-                "icon": "sun.max.circle.fill",
+                "icon": "s.circle.fill",
                 "colorString": "Solar"
             ]
         case "OTHF":
